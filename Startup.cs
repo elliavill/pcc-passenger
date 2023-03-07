@@ -29,9 +29,13 @@ namespace Passenger
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("AuthConnectionString")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
+            /*// for identity
+            services.AddDbContext<DbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AuthConnectionString")));*/
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+            
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();

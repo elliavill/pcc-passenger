@@ -12,6 +12,8 @@ namespace Passenger.Models
       public int user_id { get; set; }
       public string user_first_name { get; set; }
       public string user_last_name { get; set; }
+      [Required]
+      [DataType(DataType.EmailAddress)]
       public string user_email_address { get; set; }
       public string user_password { get; set; }
       public string user_gender { get; set; }
