@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Passenger.Models.TripModel>
+
+@{
+    ViewData["Title"] = "Display";
+}
+
+<h1>Adventures</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@if (TempData["message"] != null) { 
+   <div class="alert alert-success">
+      @TempData["message"]
+   </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.trip_destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.trip_pickup_location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.trip_start_time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.trip_end_time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.trip_date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+               @Html.DisplayFor(modelItem => item.trip_destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.trip_pickup_location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.trip_start_time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.trip_end_time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.trip_date)
+            </td>
+@*            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+        </tr>
+}
+    </tbody>
+</table>
+<body>
+@*required for map*@
+<div id="map"></div>
+<iframe width="600"
+        height="700"
+        frameborder="0" style="border:0"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/search?q=Pensacola+Christian+College,FL&key=AIzaSyBx9MJTjm_EvrHNg9-TBks8LVj3jua0mbE"
+        allowfullscreen>
+</iframe>
+</body>

@@ -1,0 +1,21 @@
+﻿@{
+   ViewBag.Title = "Create";
+   Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
+
+    @*required for map*@
+    <div id="map"></div>
+    <iframe width="600"
+            height="700"
+            frameborder="0" style="border:0"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/search?q=Pensacola+Christian+College,FL&key=AIzaSyBx9MJTjm_EvrHNg9-TBks8LVj3jua0mbE"
+            allowfullscreen>
+    </iframe>
+</body>

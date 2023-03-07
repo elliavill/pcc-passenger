@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Google Map
+    </title>
+
+    <title>Places Search Box</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.js"></script>
+
+    @*doesnt work yet*@
+    @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9MJTjm_EvrHNg9-TBks8LVj3jua0mbE&language=en&region=US" type="text/javascript"></script>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <div>
+            <script type="text/javascript" src="http://maps.googleapis.com/maps/AIzaSyBx9MJTjm_EvrHNg9-TBks8LVj3jua0mbE/js?sensor=false"></script>
+            <script language="javascript" type="text/javascript"></script>
+
+
+            <h2>Google Map Search  </h2>
+            <table>
+                <tr>
+                    <td>
+                        <input id="addressinput" type="text" style="width: 447px" />
+                    </td>
+                    <td>
+                        <input id="Button1" type="button" value="Find" onclick="return Button1_onclick()" /><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div id="map" style="height: 390px; width: 489px"> </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+
+    @*required for map*@
+    <div id="map"></div>
+    <iframe width="600"
+            height="700"
+            frameborder="0" style="border:0"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/search?q=Pensacola+Christian+College,FL&key=AIzaSyBx9MJTjm_EvrHNg9-TBks8LVj3jua0mbE"
+            allowfullscreen>
+    </iframe>
+
+    @*for search box
+        <input id="pac-input"
+               class="controls"
+               type="text"
+               placeholder="Search Box" />*@
+
+    @*for search button
+        <input type="button"
+               class="btn btn-primary searchbut"
+               id="searchid"
+               value="Search" />*@
+
+    @*for auto complete search
+        <div class="pac-card" id="pac-card">
+            <div>
+                <div id="title">Autocomplete search</div>
+                <div id="type-selector" class="pac-controls">
+                    <input type="radio"
+                           name="type"
+                           id="changetype-all"
+                           checked="checked" />
+                    <label for="changetype-all">All</label>
+
+                    <input type="radio" name="type" id="changetype-establishment" />
+                    <label for="changetype-establishment">establishment</label>
+
+                    <input type="radio" name="type" id="changetype-address" />
+                    <label for="changetype-address">address</label>
+
+                    <input type="radio" name="type" id="changetype-geocode" />
+                    <label for="changetype-geocode">geocode</label>
+
+                    <input type="radio" name="type" id="changetype-cities" />
+                    <label for="changetype-cities">(cities)</label>
+
+                    <input type="radio" name="type" id="changetype-regions" />
+                    <label for="changetype-regions">(regions)</label>
+                </div>
+                <br />
+                <div id="strict-bounds-selector" class="pac-controls">
+                    <input type="checkbox" id="use-location-bias" value="" checked />
+                    <label for="use-location-bias">Bias to map viewport</label>
+
+                    <input type="checkbox" id="use-strict-bounds" value="" />
+                    <label for="use-strict-bounds">Strict bounds</label>
+                </div>
+            </div>
+            <div id="pac-container">
+                <input id="pac-input" type="text" placeholder="Enter a location" />
+            </div>
+        </div>
+        <div id="map"></div>
+        <div id="infowindow-content">
+            <span id="place-name" class="title"></span><br />
+            <span id="place-address"></span>
+        </div>*@
+
+    @*required for all
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9MJTjm_EvrHNg9-TBks8LVj3jua0mbE&callback=initAutocomplete&libraries=places&v=weekly"
+                defer></script>*@
+
+    @*doesnt work yet*@
+    @*<iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen
+                src="https://www.google.com/maps/embed/v1/search?q=Pensacola,FL&key=AIzaSyBx9MJTjm_EvrHNg9-TBks8LVj3jua0mbE"></iframe>
+
+        <iframe width="600"
+                    height="450"
+                    id="model-map"
+                    style="border:0"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBx9MJTjm_EvrHNg9-TBks8LVj3jua0mbE
+            &q=PensacolaChristianCollege,Pensacola+FL">
+            </iframe>
+             <div>
+                    <div id="modal-map2" style="height: 76%; width: 77%; position: absolute; overflow: hidden;"></div>
+                </div>
+
+
+                </script>*@
+</body>
+</html>

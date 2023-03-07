@@ -1,0 +1,84 @@
+﻿@model Passenger.Models.TripModel
+
+@{
+    ViewData["Title"] = "Trip Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    @*<h4>CreateTripModel</h4>
+    <hr />*@
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.trip_destination)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.trip_destination)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.trip_pickup_location)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.trip_pickup_location)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.trip_fare)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.trip_fare)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.trip_status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.trip_status)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.trip_distance)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.trip_distance)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.trip_start_time)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.trip_start_time)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.trip_end_time)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.trip_end_time)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.trip_date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.trip_date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.trip_availability)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.trip_availability)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.payment_method)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.payment_method)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Users)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Users.user_id)
+        </dd>
+    </dl>
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.user_id">Edit</a> |*@
+    <a asp-action="Display">Back to List</a>
+</div>
